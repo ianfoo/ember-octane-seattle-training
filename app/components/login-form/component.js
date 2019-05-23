@@ -1,7 +1,14 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class LoginFormComponent extends Component {
+  @tracked
+  userId = null;
+
+  @tracked
+  userName = null;
+
   loginUser(userId) {
     console.log(userId);
   }
@@ -14,9 +21,23 @@ export default class LoginFormComponent extends Component {
    * this would be the form element without the @action decorator.
    */
   @action
-  onLoginFormSubmit(evt) {
+  onSubmitLoginForm(evt) {
     evt.preventDefault();
     const select = evt.target.querySelector('select');
     this.loginUser(select.value);
+  }
+
+  /**
+   *
+   * @param {Event & {target: HTMLSelectElement}} evt
+   */
+  @action
+  onChangeSelect(evt) {
+    this.userId = evt.target.value;
+    this.userName = evt.target.selectedOptions[0].innerText;
+  }
+
+  get isDisabled() {
+    return !this.userId;
   }
 }
