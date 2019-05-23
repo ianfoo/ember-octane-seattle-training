@@ -1,0 +1,21 @@
+<!-- Team Selector -->
+<TeamSelector />
+
+<!-- Team Sidebar -->
+<TeamSidebar />
+
+<!-- Channel -->
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+
+  <!-- Channel Header -->
+  <ChannelHeader @title="general" @description="We'll work together" />
+  {{format-timestamp 'May 18, 2003'}}
+  <!-- Channel Message List -->
+  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+    <ChatMessage />
+
+  </div>
+  <!-- Channel Footer -->
+  <ChannelFooter />
+
+</main>
