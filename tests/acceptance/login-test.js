@@ -1,9 +1,14 @@
 import { module, test } from 'qunit';
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
+import
 
 module('Acceptance | login', function(hooks) {
   setupApplicationTest(hooks);
+
+  hooks.beforeEach(() => {
+    this.owner.register('service:auth', MockAuthService);
+  });
 
   test('a user and login', async function(assert) {
     await visit('/login');
