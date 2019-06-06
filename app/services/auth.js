@@ -5,6 +5,10 @@ import { action } from '@ember/object';
 
 const AUTH_KEY = 'shlack-auth-key';
 
+function myDecorator(obj, name) {
+  debugger;
+}
+
 export default class AuthService extends Service {
   /** @type {Router} */
   @service router;

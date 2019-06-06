@@ -9,6 +9,10 @@ module('Acceptance | logout', function(hooks) {
     this.owner.register('service:auth', MockAuthService);
   });
 
+  hooks.beforeEach(function () {
+    this.owner.register('service:auth', MockAuthService);
+  })
+
   test('visit team and click logout end up on login page', async function(assert) {
     this.owner.lookup('service:auth').currentUserId = '2';
     await visit('/teams');

@@ -1,11 +1,12 @@
 import { module, test } from 'qunit';
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
+import MockAuthService from '../stubs/mock-auth-service';
 
 module('Acceptance | login', function(hooks) {
   setupApplicationTest(hooks);
 
-  hooks.beforeEach(() => {
+  hooks.beforeEach(function() {
     this.owner.register('service:auth', MockAuthService);
   });
 

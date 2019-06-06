@@ -6,9 +6,9 @@ export default class TeamsRoute extends Route {
   /** @type { AuthService } */
   @service auth;
 
-  // beforeModel is a good place to guard for authentication
-  async beforeModel(transition) {
-    await super.beforeModel(transition);
+  async beforeModel(transtion) {
+    await super.beforeModel(transtion);
+
     if (!this.auth.isAuthenticated) {
       this.transitionTo('login');
     }
