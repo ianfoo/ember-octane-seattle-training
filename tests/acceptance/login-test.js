@@ -1,7 +1,6 @@
 import { module, test } from 'qunit';
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
-import
 
 module('Acceptance | login', function(hooks) {
   setupApplicationTest(hooks);

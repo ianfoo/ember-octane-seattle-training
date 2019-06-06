@@ -7,7 +7,7 @@ import MockAuthService from 'shlack/tests/stubs/mock-auth-service';
 module('Integration | Component | team-sidebar', function(hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(() => {
+  hooks.beforeEach(function() {
     this.owner.register('service:auth', MockAuthService);
   });
 
